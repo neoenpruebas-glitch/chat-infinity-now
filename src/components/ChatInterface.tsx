@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import robotLogo from "@/assets/chatbot-robot.png";
 
 interface Message {
   id: string;
@@ -66,7 +67,7 @@ const ChatInterface = () => {
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.response || data.message || "Gracias por tu mensaje. Un agente te contactará pronto.",
+        text: data.output || "Gracias por tu mensaje. Un agente te contactará pronto.",
         sender: "bot",
         timestamp: new Date(),
       };
@@ -111,10 +112,17 @@ const ChatInterface = () => {
       <div className="relative h-full flex flex-col backdrop-blur-sm">
         {/* Header */}
         <div className="px-6 py-4 border-b border-border/30 bg-card/50">
-          <div className="flex items-center gap-3">
-            <div className="w-3 h-3 rounded-full bg-secondary animate-pulse" />
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <img 
+                src={robotLogo} 
+                alt="AI Assistant" 
+                className="w-12 h-12 object-contain"
+              />
+              <div className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-secondary animate-pulse" />
+            </div>
             <div>
-              <h3 className="font-semibold text-foreground">Chat en Vivo</h3>
+              <h3 className="font-semibold text-foreground">Asistente IA</h3>
               <p className="text-xs text-muted-foreground">Respuesta instantánea</p>
             </div>
           </div>
