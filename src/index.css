@@ -8,41 +8,41 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 26% 6%;
-    --foreground: 180 100% 98%;
+    --background: 270 50% 12%;
+    --foreground: 280 30% 95%;
 
-    --card: 220 26% 8%;
-    --card-foreground: 180 100% 98%;
+    --card: 270 45% 16%;
+    --card-foreground: 280 30% 95%;
 
-    --popover: 220 26% 8%;
-    --popover-foreground: 180 100% 98%;
+    --popover: 270 45% 16%;
+    --popover-foreground: 280 30% 95%;
 
-    --primary: 189 97% 55%;
-    --primary-foreground: 220 26% 6%;
+    --primary: 300 70% 65%;
+    --primary-foreground: 280 30% 95%;
 
-    --secondary: 267 84% 65%;
-    --secondary-foreground: 180 100% 98%;
+    --secondary: 185 75% 55%;
+    --secondary-foreground: 280 30% 95%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 180 20% 70%;
+    --muted: 270 35% 20%;
+    --muted-foreground: 270 20% 70%;
 
-    --accent: 189 97% 55%;
-    --accent-foreground: 220 26% 6%;
+    --accent: 185 75% 55%;
+    --accent-foreground: 270 50% 12%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 280 30% 95%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 189 97% 55%;
+    --border: 270 40% 25%;
+    --input: 270 40% 20%;
+    --ring: 300 70% 65%;
 
     --radius: 0.75rem;
 
     /* Custom tokens for futuristic design */
-    --glow-primary: 189 97% 55%;
-    --glow-secondary: 267 84% 65%;
-    --gradient-start: 220 26% 6%;
-    --gradient-end: 220 26% 10%;
+    --glow-primary: 300 70% 65%;
+    --glow-secondary: 185 75% 55%;
+    --gradient-start: 270 50% 12%;
+    --gradient-end: 270 45% 18%;
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
