@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Clock, Zap } from "lucide-react";
+import { MessageSquare, Clock, Zap, Users, TrendingUp, Settings, ShieldCheck } from "lucide-react";
 import ChatInterface from "@/components/ChatInterface";
 
 const Index = () => {
@@ -14,85 +14,175 @@ const Index = () => {
       
       {/* Main content */}
       <div className="relative z-10">
-        <main className="container mx-auto px-4 py-20 lg:py-32">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <main className="container mx-auto px-4 py-12 lg:py-20">
+          {/* Hero Section */}
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-32">
             {/* Text content */}
             <div className="flex-1 text-center lg:text-left space-y-8 animate-fade-in">
               <div className="space-y-6">
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  Tu negocio nunca duerme.
-                  <br />
                   <span className="glow-text text-primary">
-                    Tu atención al cliente, tampoco.
+                    Atiende a tus clientes 24 h
                   </span>
+                  <br />
+                  en tu web, sin esfuerzo
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                  Ofrece respuestas instantáneas, capta más leads y mejora la experiencia 
-                  de tus clientes con un chatbot que trabaja 24/7 por ti.
+                  Es el momento de integrar la IA en tu negocio para hacer más y mejor.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <p className="text-lg text-foreground/80">
-                  Activa tu asistente digital hoy y sorprende a tus clientes desde el primer chat.
-                </p>
-                
                 <Button 
                   variant="hero" 
                   size="xl"
                   className="group"
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  onClick={() => document.getElementById('chat-section')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <MessageSquare className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                   Quiero mi chatbot
                 </Button>
               </div>
-
-              {/* Features */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
-                  <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-1">Disponible 24/7</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Atiende a tus clientes en cualquier momento
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
-                  <Zap className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-1">Respuestas instantáneas</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Sin tiempos de espera para tus usuarios
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors">
-                  <MessageSquare className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-1">Capta más leads</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Convierte visitantes en clientes potenciales
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Chat Interface */}
-            <div className="flex-1 relative animate-fade-in">
+            <div id="chat-section" className="flex-1 relative animate-fade-in">
               <div className="relative animate-float">
                 <ChatInterface />
               </div>
             </div>
           </div>
 
+          {/* Main Value Proposition */}
+          <div className="max-w-6xl mx-auto mb-32">
+            <div className="text-center space-y-8">
+              <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
+                Te ofrecemos un <span className="glow-text text-primary">Chatbot inteligente</span> para tu negocio
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+                que informa, asiste y convierte visitantes en potenciales clientes
+              </p>
+              
+              <div className="bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl p-8 lg:p-12 mt-12">
+                <p className="text-lg text-foreground/90 leading-relaxed">
+                  El chatbot de <span className="text-primary font-semibold">Vega Consultores</span> es una solución completa para tu web: 
+                  responde a preguntas frecuentes sobre productos o servicios, guía al cliente por tus productos/servicios 
+                  y reduce la carga de trabajo de soporte mejorando la experiencia del usuario.
+                </p>
+              </div>
+
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-secondary/20 border border-secondary/30 rounded-full animate-pulse-glow mt-8">
+                <MessageSquare className="w-5 h-5 text-secondary" />
+                <span className="text-lg font-semibold text-secondary">
+                  Pincha en el Chatbot de nuestra web para vivir la experiencia
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Benefits Grid */}
+          <div className="max-w-6xl mx-auto mb-32">
+            <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16">
+              <span className="glow-text text-primary">Beneficios clave</span> para tu negocio
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Clock className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Atención al cliente 24/7</h3>
+                <p className="text-muted-foreground">
+                  Tu chatbot nunca descansa. Atiende consultas en cualquier momento del día.
+                </p>
+              </div>
+
+              <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Zap className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Respuestas rápidas y coherentes</h3>
+                <p className="text-muted-foreground">
+                  Responde instantáneamente a consultas de visitantes con información precisa.
+                </p>
+              </div>
+
+              <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <TrendingUp className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Captura de leads</h3>
+                <p className="text-muted-foreground">
+                  Captura datos de interesados y genera leads cualificados automáticamente.
+                </p>
+              </div>
+
+              <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Reducción del tiempo de soporte</h3>
+                <p className="text-muted-foreground">
+                  Automatiza respuestas a preguntas repetitivas y libera a tu equipo.
+                </p>
+              </div>
+
+              <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <ShieldCheck className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Mejora la experiencia del usuario</h3>
+                <p className="text-muted-foreground">
+                  Ofrece una experiencia fluida y personalizada que encanta a tus clientes.
+                </p>
+              </div>
+
+              <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Settings className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Escalable y personalizable</h3>
+                <p className="text-muted-foreground">
+                  Se adapta según tu catálogo de productos y servicios, creciendo contigo.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Use Cases Section */}
+          <div className="max-w-5xl mx-auto mb-32">
+            <div className="text-center space-y-6 mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                Perfecto para <span className="glow-text text-primary">cualquier negocio</span>
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Este chatbot se adapta a ti, sin importar tu sector
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 rounded-3xl p-8 lg:p-12 border border-border/50">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  "Tiendas online",
+                  "Talleres",
+                  "Abogacía",
+                  "Construcción",
+                  "Formación",
+                  "Hostelería",
+                  "Servicios locales",
+                  "Y mucho más..."
+                ].map((item, index) => (
+                  <div key={index} className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border/30 hover:border-primary/50 transition-colors">
+                    <p className="font-semibold text-foreground">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Special Offer Section */}
-          <div className="mt-32 max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="relative rounded-3xl overflow-hidden glow-box">
               {/* Gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20" />
@@ -114,7 +204,7 @@ const Index = () => {
                     </span>
                   </h2>
                   <p className="text-xl text-muted-foreground">
-                    No dejes pasar esta oferta especial de lanzamiento
+                    ¡Ahorra el 40% en la implementación y el 50% en la cuota mensual para siempre!
                   </p>
                 </div>
 
@@ -127,12 +217,12 @@ const Index = () => {
                         <h3 className="text-lg font-semibold text-foreground">Implementación del Servicio</h3>
                         
                         <div className="flex items-baseline justify-center gap-3">
-                          <span className="text-2xl text-muted-foreground line-through">860€</span>
-                          <span className="text-5xl font-bold text-primary glow-text">385€</span>
+                          <span className="text-2xl text-muted-foreground line-through">730€</span>
+                          <span className="text-5xl font-bold text-primary glow-text">435€</span>
                         </div>
                         
                         <div className="inline-block px-4 py-1 bg-primary/20 border border-primary/30 rounded-full">
-                          <span className="text-sm font-semibold text-primary">Ahorra 40% • 475€ de descuento</span>
+                          <span className="text-sm font-semibold text-primary">Ahorra 40% • 295€ de descuento</span>
                         </div>
                       </div>
                     </div>
@@ -163,7 +253,7 @@ const Index = () => {
                     variant="hero" 
                     size="xl"
                     className="group text-lg"
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    onClick={() => document.getElementById('chat-section')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     <MessageSquare className="w-6 h-6 group-hover:rotate-12 transition-transform" />
                     Activar mi chatbot ahora
