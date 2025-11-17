@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Clock, Zap } from "lucide-react";
-import heroImage from "@/assets/chatbot-hero.jpg";
+import ChatInterface from "@/components/ChatInterface";
 
 const Index = () => {
   return (
@@ -83,15 +83,10 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Hero image */}
+            {/* Chat Interface */}
             <div className="flex-1 relative animate-fade-in">
               <div className="relative animate-float">
-                <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-2xl" />
-                <img 
-                  src={heroImage} 
-                  alt="Chatbot futurista"
-                  className="relative rounded-3xl shadow-2xl border border-border/20 w-full"
-                />
+                <ChatInterface />
               </div>
             </div>
           </div>
