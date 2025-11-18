@@ -44,7 +44,7 @@ const ChatInterface = () => {
 
     try {
       const response = await fetch(
-        "https://primary-production-0bdc.up.railway.app/webhook-test/3f256822-14c4-4efe-93c4-f0213b9039aa",
+        "https://primary-production-0bdc.up.railway.app/webhook/3f256822-14c4-4efe-93c4-f0213b9039aa",
         {
           method: "POST",
           headers: {
