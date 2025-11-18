@@ -133,10 +133,10 @@ const ChatInterface = () => {
                 className={`max-w-[80%] rounded-2xl px-4 py-3 ${
                   message.sender === "user"
                     ? "bg-primary/90 text-primary-foreground glow-box"
-                    : "bg-card/80 text-foreground border border-border/30"
+                    : "bg-card text-foreground border-2 border-primary/30"
                 }`}
               >
-                <div className="text-sm leading-relaxed prose prose-sm dark:prose-invert max-w-none prose-p:my-2 prose-ul:my-2 prose-ol:my-2 prose-li:my-1 prose-headings:my-2">
+                <div className="text-sm leading-relaxed prose prose-sm prose-invert max-w-none prose-p:my-2 prose-ul:my-2 prose-ol:my-2 prose-li:my-1 prose-headings:my-2 prose-strong:font-bold [&>*]:text-foreground">
                   <ReactMarkdown>{message.text}</ReactMarkdown>
                 </div>
                 <span className="text-xs opacity-60 mt-1 block">

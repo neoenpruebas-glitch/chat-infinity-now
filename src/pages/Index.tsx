@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Clock, Zap, Users, TrendingUp, Settings, ShieldCheck } from "lucide-react";
+import { MessageSquare, Clock, Zap, Users, TrendingUp, Settings, ShieldCheck, Sparkles } from "lucide-react";
 import ChatInterface from "@/components/ChatInterface";
+import ContactDialog from "@/components/ContactDialog";
 
 const Index = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Grid pattern background */}
@@ -37,11 +41,12 @@ const Index = () => {
                 <Button 
                   variant="hero" 
                   size="xl"
-                  className="group"
-                  onClick={() => document.getElementById('chat-section')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="group relative overflow-hidden"
+                  onClick={() => setDialogOpen(true)}
                 >
-                  <MessageSquare className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                  Quiero mi chatbot
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <Sparkles className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
+                  <span className="relative z-10">Quiero mi chatbot</span>
                 </Button>
               </div>
             </div>
@@ -72,12 +77,18 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="inline-flex items-center gap-2 px-6 py-3 bg-secondary/20 border border-secondary/30 rounded-full animate-pulse-glow mt-8">
-                <MessageSquare className="w-5 h-5 text-secondary" />
-                <span className="text-lg font-semibold text-secondary">
-                  Pincha en el Chatbot de nuestra web para vivir la experiencia
+              <button
+                onClick={() => document.getElementById('chat-section')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-secondary/20 via-primary/10 to-secondary/20 border-2 border-secondary/40 rounded-full animate-pulse-glow mt-8 hover:scale-105 transition-all duration-300 group cursor-pointer glow-box"
+              >
+                <MessageSquare className="w-6 h-6 text-secondary group-hover:rotate-12 transition-transform" />
+                <span className="text-lg font-bold">
+                  <span className="text-foreground">Pincha en el </span>
+                  <span className="text-secondary glow-text">Chatbot</span>
+                  <span className="text-foreground"> de nuestra web para vivir la experiencia</span>
                 </span>
-              </div>
+                <Sparkles className="w-5 h-5 text-primary animate-pulse" />
+              </button>
             </div>
           </div>
 
@@ -252,11 +263,12 @@ const Index = () => {
                   <Button 
                     variant="hero" 
                     size="xl"
-                    className="group text-lg"
-                    onClick={() => document.getElementById('chat-section')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="group text-lg relative overflow-hidden"
+                    onClick={() => setDialogOpen(true)}
                   >
-                    <MessageSquare className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-                    Activar mi chatbot ahora
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <Sparkles className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
+                    <span className="relative z-10">Activar mi chatbot ahora</span>
                   </Button>
                   <p className="mt-4 text-sm text-muted-foreground">
                     💎 Precio garantizado de por vida · Sin permanencia · Cancela cuando quieras
@@ -267,6 +279,8 @@ const Index = () => {
           </div>
         </main>
       </div>
+
+      <ContactDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </div>
   );
 };
