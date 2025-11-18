@@ -96,7 +96,7 @@ const ChatInterface = () => {
   };
 
   return (
-    <div className="relative w-full h-full min-h-[500px] lg:min-h-[600px] rounded-3xl overflow-hidden glow-box">
+    <div className="relative w-full h-[500px] lg:h-[600px] rounded-3xl overflow-hidden glow-box">
       {/* Futuristic background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-card via-background to-card opacity-90" />
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
