@@ -19,7 +19,6 @@ interface ContactDialogProps {
 
 const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
   const [nombre, setNombre] = useState("");
-  const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -27,10 +26,10 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!nombre || !email) {
+    if (!nombre || !telefono) {
       toast({
         title: "Campos requeridos",
-        description: "Por favor completa nombre y email",
+        description: "Por favor completa nombre y teléfono",
         variant: "destructive",
       });
       return;
@@ -48,8 +47,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
           },
           body: JSON.stringify({
             nombre,
-            email,
-            telefono: telefono || null,
+            telefono,
             timestamp: new Date().toISOString(),
           }),
         }
@@ -61,7 +59,6 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
           description: "Nos pondremos en contacto contigo pronto",
         });
         setNombre("");
-        setEmail("");
         setTelefono("");
         onOpenChange(false);
       } else {
@@ -109,23 +106,8 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-base font-semibold">
-              Email *
-            </Label>
-            <Input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="tu@email.com"
-              required
-              className="h-12 text-base border-border/50 focus:border-primary bg-background/50"
-            />
-          </div>
-
-          <div className="space-y-2">
             <Label htmlFor="telefono" className="text-base font-semibold">
-              Teléfono <span className="text-muted-foreground font-normal">(opcional)</span>
+              Teléfono *
             </Label>
             <Input
               id="telefono"
@@ -133,6 +115,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
               value={telefono}
               onChange={(e) => setTelefono(e.target.value)}
               placeholder="+34 600 000 000"
+              required
               className="h-12 text-base border-border/50 focus:border-primary bg-background/50"
             />
           </div>
