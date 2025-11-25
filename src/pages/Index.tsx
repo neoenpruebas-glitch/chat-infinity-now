@@ -195,7 +195,7 @@ const Index = () => {
                     </span>
                   </h2>
                   <p className="text-xl text-muted-foreground">
-                    ¡Ahorra el 40% en la implementación y el 50% en la cuota mensual para siempre!
+                    ¡Ahorra el 40% en la implementación y el 50% en la cuota mensual durante 14 meses!
                   </p>
                 </div>
 
