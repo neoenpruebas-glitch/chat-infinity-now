@@ -3,12 +3,9 @@ import { Button } from "@/components/ui/button";
 import { MessageSquare, Clock, Zap, Users, TrendingUp, Settings, ShieldCheck, Sparkles } from "lucide-react";
 import ChatInterface from "@/components/ChatInterface";
 import ContactDialog from "@/components/ContactDialog";
-
 const Index = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
-
-  return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+  return <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
       
@@ -38,12 +35,7 @@ const Index = () => {
               </div>
 
               <div className="space-y-4">
-                <Button 
-                  variant="hero" 
-                  size="xl"
-                  className="group relative overflow-hidden"
-                  onClick={() => setDialogOpen(true)}
-                >
+                <Button variant="hero" size="xl" className="group relative overflow-hidden" onClick={() => setDialogOpen(true)}>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <Sparkles className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
                   <span className="relative z-10">Quiero mi chatbot</span>
@@ -77,10 +69,9 @@ const Index = () => {
                 </p>
               </div>
 
-              <button
-                onClick={() => document.getElementById('chat-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-secondary/20 via-primary/10 to-secondary/20 border-2 border-secondary/40 rounded-full animate-pulse-glow mt-8 hover:scale-105 transition-all duration-300 group cursor-pointer glow-box"
-              >
+              <button onClick={() => document.getElementById('chat-section')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-secondary/20 via-primary/10 to-secondary/20 border-2 border-secondary/40 rounded-full animate-pulse-glow mt-8 hover:scale-105 transition-all duration-300 group cursor-pointer glow-box">
                 <MessageSquare className="w-6 h-6 text-secondary group-hover:rotate-12 transition-transform" />
                 <span className="text-lg font-bold">
                   <span className="text-foreground">Pincha en el </span>
@@ -174,20 +165,9 @@ const Index = () => {
 
             <div className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 rounded-3xl p-8 lg:p-12 border border-border/50">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {[
-                  "Tiendas online",
-                  "Talleres",
-                  "Abogacía",
-                  "Construcción",
-                  "Formación",
-                  "Hostelería",
-                  "Servicios locales",
-                  "Y mucho más..."
-                ].map((item, index) => (
-                  <div key={index} className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border/30 hover:border-primary/50 transition-colors">
+                {["Tiendas online", "Talleres", "Abogacía", "Construcción", "Formación", "Hostelería", "Servicios locales", "Y mucho más..."].map((item, index) => <div key={index} className="text-center p-4 rounded-xl bg-card/50 backdrop-blur-sm border border-border/30 hover:border-primary/50 transition-colors">
                     <p className="font-semibold text-foreground">{item}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -260,19 +240,13 @@ const Index = () => {
 
                 {/* CTA Button */}
                 <div className="pt-4">
-                  <Button 
-                    variant="hero" 
-                    size="xl"
-                    className="group text-lg relative overflow-hidden"
-                    onClick={() => setDialogOpen(true)}
-                  >
+                  <Button variant="hero" size="xl" className="group text-lg relative overflow-hidden" onClick={() => setDialogOpen(true)}>
                     <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <Sparkles className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
                     <span className="relative z-10">Activar mi chatbot ahora</span>
                   </Button>
                   <p className="mt-4 text-sm text-muted-foreground">
-                    💎 Precio garantizado de por vida · Sin permanencia · Cancela cuando quieras
-                  </p>
+                </p>
                 </div>
               </div>
             </div>
@@ -281,8 +255,6 @@ const Index = () => {
       </div>
 
       <ContactDialog open={dialogOpen} onOpenChange={setDialogOpen} />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
