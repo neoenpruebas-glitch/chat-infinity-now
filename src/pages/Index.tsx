@@ -35,21 +35,26 @@ const Index = () => {
               </div>
 
               <div className="space-y-4">
-                <Button variant="hero" size="xl" className="group relative overflow-hidden" onClick={async () => {
-                  try {
-                    await fetch("https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
-                      method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify({ "1boton": "clicado", timestamp: new Date().toISOString() })
-                    });
-                  } catch (error) {
-                    console.error("Error enviando webhook:", error);
-                  }
-                  setDialogOpen(true);
-                }}>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <Bot className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
-                  <span className="relative z-10">Quiero mi chatbot</span>
+                <Button 
+                  variant="hero" 
+                  size="xl" 
+                  className="group relative overflow-hidden shadow-2xl hover:shadow-primary/50 transform transition-all duration-300 hover:-translate-y-1" 
+                  onClick={async () => {
+                    try {
+                      await fetch("https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ "1boton": "clicado", timestamp: new Date().toISOString() })
+                      });
+                    } catch (error) {
+                      console.error("Error enviando webhook:", error);
+                    }
+                    setDialogOpen(true);
+                  }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+                  <span className="relative z-10 text-lg font-bold tracking-wide">✨ Quiero mi chatbot</span>
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </Button>
               </div>
             </div>
@@ -251,21 +256,26 @@ const Index = () => {
 
                 {/* CTA Button */}
                 <div className="pt-4">
-                  <Button variant="hero" size="xl" className="group text-lg relative overflow-hidden" onClick={async () => {
-                    try {
-                      await fetch("https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ "2boton": "clicado", timestamp: new Date().toISOString() })
-                      });
-                    } catch (error) {
-                      console.error("Error enviando webhook:", error);
-                    }
-                    setDialogOpen(true);
-                  }}>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <Bot className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
-                    <span className="relative z-10">Activar mi chatbot ahora</span>
+                  <Button 
+                    variant="hero" 
+                    size="xl" 
+                    className="group text-lg relative overflow-hidden shadow-2xl hover:shadow-secondary/50 transform transition-all duration-300 hover:-translate-y-1 animate-pulse-glow" 
+                    onClick={async () => {
+                      try {
+                        await fetch("https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ "2boton": "clicado", timestamp: new Date().toISOString() })
+                        });
+                      } catch (error) {
+                        console.error("Error enviando webhook:", error);
+                      }
+                      setDialogOpen(true);
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-secondary via-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+                    <span className="relative z-10 text-xl font-bold tracking-wide">🚀 Activar mi chatbot ahora</span>
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   </Button>
                   <p className="mt-4 text-sm text-muted-foreground">
                 </p>
