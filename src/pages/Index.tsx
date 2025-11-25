@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Clock, Zap, Users, TrendingUp, Settings, ShieldCheck, Sparkles } from "lucide-react";
+import { MessageSquare, Clock, Zap, Users, TrendingUp, Settings, ShieldCheck, Sparkles, Bot } from "lucide-react";
 import ChatInterface from "@/components/ChatInterface";
 import ContactDialog from "@/components/ContactDialog";
 const Index = () => {
@@ -35,9 +35,20 @@ const Index = () => {
               </div>
 
               <div className="space-y-4">
-                <Button variant="hero" size="xl" className="group relative overflow-hidden" onClick={() => setDialogOpen(true)}>
+                <Button variant="hero" size="xl" className="group relative overflow-hidden" onClick={async () => {
+                  try {
+                    await fetch("https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ "1boton": "clicado", timestamp: new Date().toISOString() })
+                    });
+                  } catch (error) {
+                    console.error("Error enviando webhook:", error);
+                  }
+                  setDialogOpen(true);
+                }}>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <Sparkles className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
+                  <Bot className="w-5 h-5 group-hover:scale-110 transition-transform relative z-10" />
                   <span className="relative z-10">Quiero mi chatbot</span>
                 </Button>
               </div>
@@ -240,9 +251,20 @@ const Index = () => {
 
                 {/* CTA Button */}
                 <div className="pt-4">
-                  <Button variant="hero" size="xl" className="group text-lg relative overflow-hidden" onClick={() => setDialogOpen(true)}>
+                  <Button variant="hero" size="xl" className="group text-lg relative overflow-hidden" onClick={async () => {
+                    try {
+                      await fetch("https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ "2boton": "clicado", timestamp: new Date().toISOString() })
+                      });
+                    } catch (error) {
+                      console.error("Error enviando webhook:", error);
+                    }
+                    setDialogOpen(true);
+                  }}>
                     <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <Sparkles className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
+                    <Bot className="w-6 h-6 group-hover:scale-110 transition-transform relative z-10" />
                     <span className="relative z-10">Activar mi chatbot ahora</span>
                   </Button>
                   <p className="mt-4 text-sm text-muted-foreground">

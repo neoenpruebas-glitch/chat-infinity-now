@@ -10,7 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
-import { Send, Sparkles } from "lucide-react";
+import { Send, Bot } from "lucide-react";
 
 interface ContactDialogProps {
   open: boolean;
@@ -39,7 +39,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
 
     try {
       const response = await fetch(
-        "https://primary-production-0bdc.up.railway.app/webhook-test/d0bced49-eaca-4a78-a558-cf2ba604ccf9",
+        "https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6",
         {
           method: "POST",
           headers: {
@@ -80,7 +80,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
       <DialogContent className="sm:max-w-[500px] bg-gradient-to-br from-background via-background to-primary/5 border-primary/20">
         <DialogHeader className="space-y-4">
           <div className="mx-auto w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center glow-box">
-            <Sparkles className="w-8 h-8 text-primary" />
+            <Bot className="w-8 h-8 text-primary" />
           </div>
           <DialogTitle className="text-3xl font-bold text-center">
             <span className="glow-text text-primary">¡Activa tu Chatbot!</span>
