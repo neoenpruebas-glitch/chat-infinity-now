@@ -5,6 +5,7 @@ import { Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ReactMarkdown from "react-markdown";
 import robotLogo from "@/assets/chatbot-robot.png";
+import { supabase } from "@/integrations/supabase/client";
 
 interface Message {
   id: string;
@@ -13,15 +14,21 @@ interface Message {
   timestamp: Date;
 }
 
+interface ChatMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
 const ChatInterface = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?",
+      text: "¡Hola! Soy Neo, tu asistente virtual. ¿En qué puedo ayudarte hoy?",
       sender: "bot",
       timestamp: new Date(),
     },
   ]);
+  const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
@@ -43,35 +50,37 @@ const ChatInterface = () => {
       timestamp: new Date(),
     };
 
+    const userChatMessage: ChatMessage = {
+      role: "user",
+      content: inputValue,
+    };
+
     setMessages((prev) => [...prev, userMessage]);
+    setChatHistory((prev) => [...prev, userChatMessage]);
     setInputValue("");
     setIsLoading(true);
 
     try {
-      const response = await fetch(
-        "https://primary-production-51ca.up.railway.app/webhook-test/3f256822-14c4-4efe-93c4-f0213b9039aa",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            message: inputValue,
-            timestamp: new Date().toISOString(),
-          }),
-        }
-      );
+      const { data, error } = await supabase.functions.invoke('chat', {
+        body: { messages: [...chatHistory, userChatMessage] },
+      });
 
-      const data = await response.json();
+      if (error) throw error;
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.output || "Gracias por tu mensaje. Un agente te contactará pronto.",
+        text: data.message || "Lo siento, hubo un problema. Intenta de nuevo.",
         sender: "bot",
         timestamp: new Date(),
       };
 
+      const assistantChatMessage: ChatMessage = {
+        role: "assistant",
+        content: data.message,
+      };
+
       setMessages((prev) => [...prev, botMessage]);
+      setChatHistory((prev) => [...prev, assistantChatMessage]);
     } catch (error) {
       console.error("Error sending message:", error);
       toast({
