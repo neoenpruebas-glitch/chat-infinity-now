@@ -24,11 +24,13 @@ const ChatInterface = () => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+    }
   }, [messages]);
 
   const sendMessage = async () => {
@@ -126,7 +128,7 @@ const ChatInterface = () => {
         </div>
 
         {/* Messages area */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
+        <div ref={messagesContainerRef} className="flex-1 overflow-y-auto p-6 space-y-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -158,7 +160,7 @@ const ChatInterface = () => {
               </div>
             </div>
           )}
-          <div ref={messagesEndRef} />
+          
         </div>
 
         {/* Input area */}
