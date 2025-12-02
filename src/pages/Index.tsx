@@ -41,7 +41,7 @@ const Index = () => {
                   className="group relative overflow-hidden shadow-2xl hover:shadow-primary/50 transform transition-all duration-300 hover:-translate-y-1" 
                   onClick={async () => {
                     try {
-                      await fetch("https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
+                      await fetch("https://primary-production-51ca.up.railway.app/webhook/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ "1boton": "clicado", timestamp: new Date().toISOString() })
@@ -262,7 +262,7 @@ const Index = () => {
                     className="group text-lg relative overflow-hidden shadow-2xl hover:shadow-secondary/50 transform transition-all duration-300 hover:-translate-y-1 animate-pulse-glow" 
                     onClick={async () => {
                       try {
-                        await fetch("https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
+                        await fetch("https://primary-production-51ca.up.railway.app/webhook/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
                           method: "POST",
                           headers: { "Content-Type": "application/json" },
                           body: JSON.stringify({ "2boton": "clicado", timestamp: new Date().toISOString() })
