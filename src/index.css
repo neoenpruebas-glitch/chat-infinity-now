@@ -8,41 +8,49 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 270 50% 12%;
-    --foreground: 280 30% 95%;
+    /* Base colors from brand palette */
+    /* #0f0122 - Fondo oscuro */
+    --background: 272 89% 7%;
+    --foreground: 270 30% 95%;
 
-    --card: 270 45% 16%;
-    --card-foreground: 280 30% 95%;
+    /* #372c8c - Violeta Oscuro for cards */
+    --card: 245 52% 36%;
+    --card-foreground: 270 30% 95%;
 
-    --popover: 270 45% 16%;
-    --popover-foreground: 280 30% 95%;
+    --popover: 245 52% 30%;
+    --popover-foreground: 270 30% 95%;
 
-    --primary: 300 70% 65%;
-    --primary-foreground: 280 30% 95%;
+    /* #c272e7 - Violeta Claro for primary actions */
+    --primary: 284 68% 68%;
+    --primary-foreground: 272 89% 7%;
 
-    --secondary: 185 75% 55%;
-    --secondary-foreground: 280 30% 95%;
+    /* #7068C9 - Violeta oscuro intermedio */
+    --secondary: 245 44% 60%;
+    --secondary-foreground: 270 30% 95%;
 
-    --muted: 270 35% 20%;
-    --muted-foreground: 270 20% 70%;
+    /* Muted variations */
+    --muted: 245 52% 25%;
+    --muted-foreground: 270 30% 70%;
 
-    --accent: 185 75% 55%;
-    --accent-foreground: 270 50% 12%;
+    /* #7068C9 for accent */
+    --accent: 245 44% 60%;
+    --accent-foreground: 270 30% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 280 30% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 270 30% 95%;
 
-    --border: 270 40% 25%;
-    --input: 270 40% 20%;
-    --ring: 300 70% 65%;
+    /* Border and input from dark violet */
+    --border: 245 52% 30%;
+    --input: 245 52% 20%;
+    --ring: 284 68% 68%;
 
     --radius: 0.75rem;
 
     /* Custom tokens for futuristic design */
-    --glow-primary: 300 70% 65%;
-    --glow-secondary: 185 75% 55%;
-    --gradient-start: 270 50% 12%;
-    --gradient-end: 270 45% 18%;
+    --glow-primary: 284 68% 68%;
+    --glow-secondary: 245 44% 60%;
+    --gradient-start: 272 89% 7%;
+    --gradient-end: 245 52% 20%;
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
