@@ -39,7 +39,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
 
     try {
       const response = await fetch(
-        "https://primary-production-51ca.up.railway.app/webhook-test/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6",
+        "https://primary-production-51ca.up.railway.app/webhook/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6",
         {
           method: "POST",
           headers: {
