@@ -188,6 +188,74 @@ const Index = () => {
             </div>
           </div>
 
+          {/* Usos Adicionales Section */}
+          <div className="max-w-6xl mx-auto mb-32 mt-16">
+            <div className="text-center space-y-6 mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                <span className="glow-text text-primary">Usos adicionales</span> del chatbot
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Descubre todo lo que puede hacer por tu negocio
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">📅</div>
+                <h3 className="text-lg font-semibold mb-2">Reservar citas o agendar reuniones</h3>
+                <p className="text-muted-foreground text-sm">Gestionar horarios, confirmar disponibilidad y enviar recordatorios automáticos.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">📝</div>
+                <h3 className="text-lg font-semibold mb-2">Captar leads con formularios inteligentes</h3>
+                <p className="text-muted-foreground text-sm">Recolectar nombre, email, teléfono y necesidades antes de transferir al equipo.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">🔐</div>
+                <h3 className="text-lg font-semibold mb-2">Verificación previa del usuario</h3>
+                <p className="text-muted-foreground text-sm">Pedir datos clave (número de cliente, DNI, matrícula, pedido) para respuestas personalizadas.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">📦</div>
+                <h3 className="text-lg font-semibold mb-2">Seguimiento de pedidos</h3>
+                <p className="text-muted-foreground text-sm">Consultar el tracking, estado de envío o fecha estimada de entrega.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">🔧</div>
+                <h3 className="text-lg font-semibold mb-2">Estado de reparación o taller</h3>
+                <p className="text-muted-foreground text-sm">Ideal para mecánicas: "Tu coche está en diagnóstico / reparación / finalizado".</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">⭐</div>
+                <h3 className="text-lg font-semibold mb-2">Encuestas de satisfacción</h3>
+                <p className="text-muted-foreground text-sm">CSAT, NPS o encuestas rápidas al finalizar la interacción.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">🎯</div>
+                <h3 className="text-lg font-semibold mb-2">Recomendaciones personalizadas</h3>
+                <p className="text-muted-foreground text-sm">Sugerir productos, servicios o paquetes según las respuestas del usuario.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">💰</div>
+                <h3 className="text-lg font-semibold mb-2">Presupuestos instantáneos</h3>
+                <p className="text-muted-foreground text-sm">Pedir datos clave y generar un presupuesto estimado sin intervención humana.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <div className="text-3xl mb-4">🚀</div>
+                <h3 className="text-lg font-semibold mb-2">Onboarding y guía paso a paso</h3>
+                <p className="text-muted-foreground text-sm">Ayuda a nuevos clientes a entender cómo usar un servicio o producto.</p>
+              </div>
+            </div>
+          </div>
+
           {/* Special Offer Section */}
           <div className="max-w-5xl mx-auto">
             <div className="relative rounded-3xl overflow-hidden glow-box">
@@ -279,6 +347,92 @@ const Index = () => {
                   </Button>
                   <p className="mt-4 text-sm text-muted-foreground">
                 </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Voice Assistant Pricing Section */}
+          <div className="max-w-5xl mx-auto mt-16">
+            <div className="relative rounded-3xl overflow-hidden glow-box">
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-background to-primary/20" />
+              <div className="absolute top-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+              
+              <div className="relative p-8 lg:p-12 text-center space-y-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 border border-primary/30 rounded-full animate-pulse-glow">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  <span className="text-sm font-semibold text-primary">Asistente de Voz con IA</span>
+                </div>
+
+                <div className="space-y-4">
+                  <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+                    <span className="glow-text text-secondary">
+                      Lleva tu atención al siguiente nivel
+                    </span>
+                  </h2>
+                  <p className="text-xl text-muted-foreground">
+                    Un asistente de voz inteligente que habla con tus clientes como si fuera parte de tu equipo
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                  <div className="relative group">
+                    <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-secondary/50 transition-all duration-300">
+                      <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground">Implementación del Servicio</h3>
+                        
+                        <div className="flex items-baseline justify-center gap-3">
+                          <span className="text-2xl text-muted-foreground line-through">1.158€</span>
+                          <span className="text-5xl font-bold text-secondary glow-text">695€</span>
+                        </div>
+                        
+                        <div className="inline-block px-4 py-1 bg-secondary/20 border border-secondary/30 rounded-full">
+                          <span className="text-sm font-semibold text-secondary">Ahorra 40% • 463€ de descuento</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="relative group">
+                    <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300">
+                      <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-foreground">Cuota Mensual</h3>
+                        
+                        <div className="flex items-baseline justify-center gap-3">
+                          <span className="text-5xl font-bold text-primary glow-text">11€/mes</span>
+                        </div>
+                        
+                        <div className="inline-block px-4 py-1 bg-primary/20 border border-primary/30 rounded-full">
+                          <span className="text-sm font-semibold text-primary">30 min incluidos • Después precio/minuto</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4">
+                  <Button variant="hero" size="xl" className="group text-lg relative overflow-hidden shadow-2xl hover:shadow-primary/50 transform transition-all duration-300 hover:-translate-y-1 animate-pulse-glow" onClick={async () => {
+                    try {
+                      await fetch("https://primary-production-51ca.up.railway.app/webhook/f5f52f87-bfb8-41a6-80c8-3c204e93e1e6", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                          "3boton_voz": "clicado",
+                          timestamp: new Date().toISOString()
+                        })
+                      });
+                    } catch (error) {
+                      console.error("Error enviando webhook:", error);
+                    }
+                    setDialogOpen(true);
+                  }}>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse" />
+                    <span className="relative z-10 text-xl font-bold tracking-wide">🎙️ Quiero mi asistente de voz</span>
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  </Button>
                 </div>
               </div>
             </div>
