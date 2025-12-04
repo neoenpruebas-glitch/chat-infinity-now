@@ -291,9 +291,12 @@ const Index = () => {
                       <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-foreground">Implementación del Servicio</h3>
                         
-                        <div className="flex items-baseline justify-center gap-3">
-                          <span className="text-2xl text-muted-foreground line-through">730€</span>
-                          <span className="text-5xl font-bold text-primary glow-text">435€</span>
+                        <div className="flex flex-col items-center gap-1">
+                          <div className="flex items-baseline justify-center gap-3">
+                            <span className="text-2xl text-muted-foreground line-through">730€</span>
+                            <span className="text-5xl font-bold text-primary glow-text">435€</span>
+                          </div>
+                          <span className="text-xs font-medium text-primary/80">IVA INCLUIDO</span>
                         </div>
                         
                         <div className="inline-block px-4 py-1 bg-primary/20 border border-primary/30 rounded-full">
@@ -382,9 +385,12 @@ const Index = () => {
                       <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-foreground">Implementación del Servicio</h3>
                         
-                        <div className="flex items-baseline justify-center gap-3">
-                          <span className="text-2xl text-muted-foreground line-through">1.158€</span>
-                          <span className="text-5xl font-bold text-secondary glow-text">695€</span>
+                        <div className="flex flex-col items-center gap-1">
+                          <div className="flex items-baseline justify-center gap-3">
+                            <span className="text-2xl text-muted-foreground line-through">1.158€</span>
+                            <span className="text-5xl font-bold text-secondary glow-text">695€</span>
+                          </div>
+                          <span className="text-xs font-medium text-secondary/80">IVA INCLUIDO</span>
                         </div>
                         
                         <div className="inline-block px-4 py-1 bg-secondary/20 border border-secondary/30 rounded-full">
